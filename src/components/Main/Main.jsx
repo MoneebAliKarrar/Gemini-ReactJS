@@ -51,24 +51,24 @@ const Main = () => {
             </div>
             <div className="result-data">
               <img src={assets.gemini_icon} alt="" />
-              {loading?
-              <div className="loader">
-                <hr />
-                <hr />
-                <hr />
-              </div>
-              :
-              <p dangerouslySetInnerHTML={{__html:resultData}}></p>
-              }  
+              {loading ?
+                <div className="loader">
+                  <hr />
+                  <hr />
+                  <hr />
+                </div>
+                :
+                <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
+              }
             </div>
-            </div>}
+          </div>}
         <div className="main-bottom">
           <div className="search-box">
             <input type='text' placeholder='Enter a prompt here' value={input} onChange={(e) => setInput(e.target.value)} />
             <div>
               <img src={assets.gallery_icon} alt="" />
               <img src={assets.mic_icon} alt="" />
-              <img onClick={() => onSent(input)} src={assets.send_icon} alt="" />
+              <img onClick={() => onSent(undefined, input)} src={assets.send_icon} alt="" />
             </div>
           </div>
           <p className="bottom-info">
